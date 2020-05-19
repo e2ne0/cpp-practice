@@ -29,6 +29,7 @@
 #include "functions.h"
 
 
+
 // �ŧi sCircle ���c
 struct sCircle
 {
