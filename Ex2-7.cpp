@@ -1,33 +1,33 @@
-// �ĤG���W���Ҹ� ------- �� 7 �D 5 + 1 �� -------
+// 第二次上機考試 ------- 第 7 題 5 + 1 分 -------
 //
-// �p���覡 :  �����g�b ex2-7.cpp ���A�B����楿�` 5 ��
-//             �N CMouse ���O���ŧi�P�����禡������A���O�g�b CMouse.h CMouse.cpp
-//             ex2-7.cpp �u���D�{�� main, �B�ॿ�`����h�O 6 ��
-//			   ���� : drawColorBox() �w�q�b functions.h ��
+// 計分方式 :  全部寫在 ex2-7.cpp 內，且能執行正常 5 分
+//             將 CMouse 類別的宣告與成員函式的實體，分別寫在 CMouse.h CMouse.cpp
+//             ex2-7.cpp 只有主程式 main, 且能正常執行則是 6 分
+//			   提示 : drawColorBox() 定義在 functions.h 中
 //
-// �ŧi CMouse ���O�̭��]�t
-//   �p���]�t(���O��ƫ��O)
-//      �y�� x/y�A�C�� color, �@���}�C mcolor �]�t��Ӥ����A���O�x�s�ѹ� ���`���A �P �b��ɤW���C��
-//      ���A status;  1:���`���A, 2:�b��ɤW, 0: ���`
-//   �����]�t
-//      �غc��(�]�w�ѹ�����l���A)
-//			�]�w ��m�b (0,0), ���A�� ���`���A
-//			mcolor ���C����O�O  NORMAL_COLOR �P DANGER_COLOR�A�� color ���]�w�����`�C�� [0]
-//      setColor() �禡�A��Ӥ޼ơA�ǤJ�ѹ����`���A�P�M�I���A���C��, ���O���O int
-//			�\��O�]�w mcolor[0] �P  mcolor[1] ���o����C��
-//      setPos �禡�A��Ӥ޼ơA�ǤJ�ѹ��� x/y �y�СA���O���O int
-//			�\��O�]�w�ѹ����y��
-//		draw �禡�A�e�X�ѹ�
-//      update() �禡�A�^�ǭȬ���ơA�Ǧ^�ѹ������A�A�޼Ƭ���J���r�� 
-//               �\��O�̷ӿ�J�� wasd �|�ӫ���A���ѹ��W�U���k�Ӳ��� 20 �ӳ��
-//               �P�ɧP�_ �ѹ��O�_�b X/Y ���t 200 ���d��(���t)
-//					���A�]�w�� ���`���A �C�⬰  mcolor[0]
-//				 ��n�b X/Y ���t 200 ����m�W
-//					���A�]�w�� �b��ɤW �C�⬰  mcolor[1]
-//				�H�ζW�X X/Y ���t 200 ���d��~  ���A�]�w�����`
+// 宣告 CMouse 類別裡面包含
+//   私有包含(都是整數型別)
+//      座標 x/y，顏色 color, 一維陣列 mcolor 包含兩個元素，分別儲存老鼠 正常狀態 與 在邊界上的顏色
+//      狀態 status;  1:正常狀態, 2:在邊界上, 0: 死亡
+//   公有包含
+//      建構元(設定老鼠的初始狀態)
+//			設定 位置在 (0,0), 狀態為 正常狀態
+//			mcolor 的顏色分別是  NORMAL_COLOR 與 DANGER_COLOR，而 color 為設定為正常顏色 [0]
+//      setColor() 函式，兩個引數，傳入老鼠正常狀態與危險狀態的顏色, 型別都是 int
+//			功能是設定 mcolor[0] 與  mcolor[1] 為這兩個顏色
+//      setPos 函式，兩個引數，傳入老鼠的 x/y 座標，型別都是 int
+//			功能是設定老鼠的座標
+//		draw 函式，畫出老鼠
+//      update() 函式，回傳值為整數，傳回老鼠的狀態，引數為輸入的字元 
+//               功能是依照輸入的 wasd 四個按鍵，讓老鼠上下左右個移動 20 個單位
+//               同時判斷 老鼠是否在 X/Y 正負 200 的範圍內(不含)
+//					狀態設定成 正常狀態 顏色為  mcolor[0]
+//				 剛好在 X/Y 正負 200 的位置上
+//					狀態設定成 在邊界上 顏色為  mcolor[1]
+//				以及超出 X/Y 正負 200 的範圍外  狀態設定成死亡
 //
-// �ھڥD�{�����ݨD�A�����i�Q����L w s a d �|�ӫ���A����ѹ������ʡA������ɧ����C��A��������ܦ��`
-// ���N���� : ���n�N�ǤJ���޼��ܼƦW�٫ŧi���򦨭��ܼƤ@��
+// 根據主程式的需求，完成可利用鍵盤 w s a d 四個按鍵，控制老鼠的移動，走到邊界改變顏色，移除並顯示死亡
+// 善意提醒 : 不要將傳入的引數變數名稱宣告成跟成員變數一樣
 //  
 //
 
@@ -45,35 +45,34 @@
 #define NORMAL_COLOR COLOR_YELLOW
 #define DANGER_COLOR COLOR_RED
 
-#define X_MAX 200	// �w�q�i���ʪ��d��
-#define Y_MAX 200	// �w�q�i���ʪ��d��
+#define X_MAX 200	// 定義可活動的範圍
+#define Y_MAX 200	// 定義可活動的範圍
 using namespace std;
 void drawFence();
 
-// draw() �禡�|�Ψ�
-//	drawColorBox( ); // �e�X�ѹ�,  x  y �y�лP�C��
+// draw() 函式會用到
+//	drawColorBox( ); // 畫出老鼠,  x  y 座標與顏色
 
-
-// update() �禡�|�Ψ�
+// update() 函式會用到
 
 	//switch () {
-	//case 'w': // ���W. ���ѹ���m,�îھڷs����m,��s�ѹ������A
+	//case 'w': // 往上. 更改老鼠位置,並根據新的位置,更新老鼠的狀態
 	//	break;
-	//case 's': // ���U
+	//case 's': // 往下
 	//	break;
-	//case 'a': // ����
+	//case 'a': // 往左
 	//	break;
-	//case 'd': // ���k
+	//case 'd': // 往右
 	//	 break;
 	//}
 
-	//if ( ) { // �w���ϰ줺
+	//if ( ) { // 安全區域內
 	//	
 	//}
-	//else if () {// ������� �ѹ����` �C������
+	//else if () {// 移除邊界 老鼠死亡 遊戲結束
 
 	//}
-	//else {	// �b��ɤW
+	//else {	// 在邊界上
 
 	//}
 
@@ -83,24 +82,24 @@ int main()
 {
 	char cIn;
 	int status;
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ��7�D");
-							// �ŧi mx �إ߮ɴN�|�۰ʩI�s CMouse �غc
-							// �I�s setPos ��m�]�w�b (-120, 120)
-							// �I�s setColor�A�C��]�w�� COLOR_WHITE, COLOR_BLACK
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 第7題");
+							// 宣告 mx 建立時就會自動呼叫 CMouse 建構
+							// 呼叫 setPos 位置設定在 (-120, 120)
+							// 呼叫 setColor，顏色設定成 COLOR_WHITE, COLOR_BLACK
 	do {
 		cleardevice();
-		drawFence();	// �e�X�d��
-						// �e�X�ѹ�
+		drawFence();	// 畫出範圍
+						// 畫出老鼠
 		swapbuffers();
-		getch();		// ��J
-						// ���ѹ��ۤv��s���A
+		getch();		// 輸入
+						// 讓老鼠自己更新狀態
 		rewind(stdin);
 	} while (	);
 
 	cleardevice();
 	drawFence();
 	setcolor(COLOR_WHITE);
-	outtextxy(X(-100), Y(0), "!! �ѹ����F GG �����N�䵲��!! ");
+	outtextxy(X(-100), Y(0), "!! 老鼠死了 GG 按任意鍵結束!! ");
 	swapbuffers();
 	while (!kbhit()) { delay(200); } return 0;
 }
