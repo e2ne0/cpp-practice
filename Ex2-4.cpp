@@ -1,22 +1,22 @@
-// �ĤG���W���Ҹ� ------- �� 4 �D 2 �� -------
+// 第二次上機考試 ------- 第 4 題 2 分 -------
 //
-//  ���D�����ϥ� cout�A�B���i�H�ϥ� for �A�B���禡���쫬�ŧi�H�Τ޼ƪ��w�]�Ȥ~������
+//  本題必須使用 cout，且不可以使用 for ，且有函式的原型宣告以及引數的預設值才有分數
 //
-// �H��ܦh�����覡�ŧi�T�� pchar �禡
-// �Ĥ@�Ө禡���@�Ӥ޼� ch (char ���O)�A�S���w�]�ȡA�L�X 5 �� ch �r��
-// �ĤG�Ө禡���@�Ӥ޼� b (bool ���O)�A�w�]�Ȭ� true 
-//        �� b �� true �ɡA�L�X 5 �� #�C �� b �� false �ɡA�L�X 5 �� * �r���C
-// �ĤT�Ө禡����Ӥ޼ơA�Ĥ@�Ӭ� n (int ���O) �ĤG�Ӭ� ch (char ���O)
-//     �u���ĤG�Ӥ޼� ch ���w�]�Ȭ�  *  �r��
-//      �\��O�L�X n �� ch �r��
+// 以函示多載的方式宣告三個 pchar 函式
+// 第一個函式有一個引數 ch (char 型別)，沒有預設值，印出 5 個 ch 字元
+// 第二個函式有一個引數 b (bool 型別)，預設值為 true 
+//        當 b 為 true 時，印出 5 個 #。 當 b 為 false 時，印出 5 個 * 字元。
+// 第三個函式有兩個引數，第一個為 n (int 型別) 第二個為 ch (char 型別)
+//     只有第二個引數 ch 有預設值為  *  字元
+//      功能是印出 n 個 ch 字元
 //
-// �ѦҥH�U����X
+// 參考以下的輸出
 //
-// �I�s pchar(),       #####
-// �I�s pchar(false)   *****
-// �I�s pchar(5, '+')  +++++
-// �I�s pchar('@')     @@@@@
-// �I�s pchar(7)       *******
+// 呼叫 pchar(),       #####
+// 呼叫 pchar(false)   *****
+// 呼叫 pchar(5, '+')  +++++
+// 呼叫 pchar('@')     @@@@@
+// 呼叫 pchar(7)       *******
 
 
 //#define EX4
@@ -27,8 +27,24 @@
 
 using namespace std;
 
-// pchar ���쫬�ŧi�g�b�o��
+// pchar 的原型宣告寫在這裡
 
+int pchar(char ch);
+
+int pchar(bool b = true);
+int pchar(int n, char ch = '*');
+int main(void)
+{
+	cout << "呼叫 pchar(),      "; pchar();
+	cout << "呼叫 pchar(false)  "; pchar(false);
+	cout << "呼叫 pchar(5,'+')  "; pchar(5, '+');
+	cout << "呼叫 pchar('@')    "; pchar('@');
+	cout << "呼叫 pchar(7)      "; pchar(7);
+	
+	system("pause"); return(0);
+}
+
+// pchar 主體寫在這裡
 int pchar(char ch)
 {
 	cout.fill(ch);
@@ -54,18 +70,5 @@ int pchar(int n, char ch = '*')
 	cout << setw(n) << ch << endl;
 	return cout.good();
 }
-int main(void)
-{
-	cout << "�I�s pchar(),      "; pchar();
-	cout << "�I�s pchar(false)  "; pchar(false);
-	cout << "�I�s pchar(5,'+')  "; pchar(5, '+');
-	cout << "�I�s pchar('@')    "; pchar('@');
-	cout << "�I�s pchar(7)      "; pchar(7);
-	
-	system("pause"); return(0);
-}
-
-// pchar �D��g�b�o��
-
 
 #endif
