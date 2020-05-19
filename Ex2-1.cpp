@@ -1,19 +1,19 @@
-// ²Ä¤G¦¸¤W¾÷¦Ò¸Õ ------- ²Ä 1 ÃD 3 ¤À -------
+// ï¿½Ä¤Gï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½Ò¸ï¿½ ------- ï¿½ï¿½ 1 ï¿½D 3 ï¿½ï¿½ -------
 // 
-// «Å§i¤@­Óµ²ºc sCircle ¸Ì­±¥]§t¤@­Ó¶êªº°ò¥»¸ê®Æ¦p¤U¡G
-//    ¦WºÙ char(10)¡B®y¼Ð x/y¡B¥b®| radius »PÃC¦â r/g/b  ¡A°£¤F¦WºÙ¥~¡A¨ä¥L³£¬O int
-// ¤å¦rÀÉ circles.txt ¸Ì­±Àx¦s¤F 10 ­Ó¶êªº¸ê®Æ , §Q¥Î fopen/fclose/fscanfµ¥«ü¥O
-//    ±N  circles.txt  Åª¤J¡A¨Ã±N¸ê®ÆÀx¦s¨ì sCircle ©Ò«Å§iªº¤@ºûµ²ºc°}¦C cx ¤¤
+// ï¿½Å§iï¿½@ï¿½Óµï¿½ï¿½c sCircle ï¿½Ì­ï¿½ï¿½]ï¿½tï¿½@ï¿½Ó¶êªºï¿½ò¥»¸ï¿½Æ¦pï¿½Uï¿½G
+//    ï¿½Wï¿½ï¿½ char(10)ï¿½Bï¿½yï¿½ï¿½ x/yï¿½Bï¿½bï¿½| radius ï¿½Pï¿½Cï¿½ï¿½ r/g/b  ï¿½Aï¿½ï¿½ï¿½Fï¿½Wï¿½Ù¥~ï¿½Aï¿½ï¿½Lï¿½ï¿½ï¿½O int
+// ï¿½ï¿½rï¿½ï¿½ circles.txt ï¿½Ì­ï¿½ï¿½xï¿½sï¿½F 10 ï¿½Ó¶êªºï¿½ï¿½ï¿½ , ï¿½Qï¿½ï¿½ fopen/fclose/fscanfï¿½ï¿½ï¿½ï¿½ï¿½O
+//    ï¿½N  circles.txt  Åªï¿½Jï¿½Aï¿½Ã±Nï¿½ï¿½ï¿½ï¿½xï¿½sï¿½ï¿½ sCircle ï¿½Ò«Å§iï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½cï¿½}ï¿½C cx ï¿½ï¿½
 //  
-// ¥t¥~¥H sCircle «Å§i¤@­ÓÅÜ¼Æ boss µ{¦¡¥²¶·¤À¦¨¨â¬q
-//  ²Ä¤@­Ó³¡¤À : Åª¨ú  circles.txt ¡A¨Ã±N¸ê®ÆÀx¦s¨ì¤@ºûµ²ºc°}¦C  cx  ¤¤
-//  ²Ä¤G³¡¤À : ¥H°j°é¦bµe­±¤W¹º¥X³o10­Ó¶ê
-//               ¦P®É­pºâ boss ®y¼Ð»P¥b®|¡A®y¼Ð¬O³o 10­Ó¶ê®y¼Ðªº¥­§¡­È
-//     				           ¥b®|¬O³o 10 ­Ó¶ê¥b®|ªºÁ`©M * 0.35
-//               ÃC¦â¬O¥Õ¦â
-//             ³Ì«á¹º¥X boss ªº¶ê
+// ï¿½tï¿½~ï¿½H sCircle ï¿½Å§iï¿½@ï¿½ï¿½ï¿½Ü¼ï¿½ boss ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½q
+//  ï¿½Ä¤@ï¿½Ó³ï¿½ï¿½ï¿½ : Åªï¿½ï¿½  circles.txt ï¿½Aï¿½Ã±Nï¿½ï¿½ï¿½ï¿½xï¿½sï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½cï¿½}ï¿½C  cx  ï¿½ï¿½
+//  ï¿½Ä¤Gï¿½ï¿½ï¿½ï¿½ : ï¿½Hï¿½jï¿½ï¿½bï¿½eï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½Xï¿½o10ï¿½Ó¶ï¿½
+//               ï¿½Pï¿½É­pï¿½ï¿½ boss ï¿½yï¿½Ð»Pï¿½bï¿½|ï¿½Aï¿½yï¿½Ð¬Oï¿½o 10ï¿½Ó¶ï¿½yï¿½Ðªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//     				           ï¿½bï¿½|ï¿½Oï¿½o 10 ï¿½Ó¶ï¿½bï¿½|ï¿½ï¿½ï¿½`ï¿½M * 0.35
+//               ï¿½Cï¿½ï¿½Oï¿½Õ¦ï¿½
+//             ï¿½Ì«á¹ºï¿½X boss ï¿½ï¿½ï¿½ï¿½
 //
-//  °Ñ¦Ò ex2-1.jpg
+//  ï¿½Ñ¦ï¿½ ex2-1.jpg
 
 //#define EX1
 #ifdef EX1
@@ -27,7 +27,7 @@
 #include "functions.h"
 
 
-// «Å§i µ²ºc sCircle 
+// ï¿½Å§i ï¿½ï¿½ï¿½c sCircle 
 struct sCircle
 {
 	char Name[10];
@@ -38,33 +38,33 @@ struct sCircle
 int main()
 {
 	int i;
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ²Ä1ÃD");
-	registermousehandler(WM_MOUSEMOVE, move_handler);		// µù¥U·Æ¹«²¾°Êªº³B²z¨ç¦¡
-	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // µù¥U·Æ¹«¥ªÁä«ö¤Uªº³B²z¨ç¦¡
-	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// µù¥U·Æ¹«¥ªÁäÄÀ©ñªº³B²z¨ç¦¡
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ï¿½ï¿½1ï¿½D");
+	registermousehandler(WM_MOUSEMOVE, move_handler);		// ï¿½ï¿½ï¿½Uï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Êªï¿½ï¿½Bï¿½zï¿½ç¦¡
+	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // ï¿½ï¿½ï¿½Uï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½Bï¿½zï¿½ç¦¡
+	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// ï¿½ï¿½ï¿½Uï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ñªº³Bï¿½zï¿½ç¦¡
 	srand(time(NULL));
 
-	FILE *sCircle;		// «Å§i«ü¦VÀÉ®×ªºµ²ºc«ü¼Ð
-	sCircle = fopen("circles.txt", "r");		// ¶}±ÒÀÉ®×
+	FILE *sCircle;		// ï¿½Å§iï¿½ï¿½ï¿½Vï¿½É®×ªï¿½ï¿½ï¿½ï¿½cï¿½ï¿½ï¿½ï¿½
+	sCircle = fopen("circles.txt", "r");		// ï¿½}ï¿½ï¿½ï¿½É®ï¿½
 	if (sCircle == NULL) {
-		printf("ÀÉ®×µLªk¶}±Ò");
+		printf("ï¿½É®×µLï¿½kï¿½}ï¿½ï¿½");
 	}
-	struct	sCircle cx[10], boss = { "boss",0,0,0,255,255,255 };// «Å§iµ²ºc°}¦C cx »P boss¡A¦b«Å§i boss ®É, ³]©wªì©l­È¬° "boss",0,0,0,255,255,255
+	struct	sCircle cx[10], boss = { "boss",0,0,0,255,255,255 };// ï¿½Å§iï¿½ï¿½ï¿½cï¿½}ï¿½C cx ï¿½P bossï¿½Aï¿½bï¿½Å§i boss ï¿½ï¿½, ï¿½]ï¿½wï¿½ï¿½lï¿½È¬ï¿½ "boss",0,0,0,255,255,255
 
-	// ²£¥Í10­Ó¶ê¡A¨Ã¿é¥X
-	for (i = 0; i < 10; i++) // ¥H°j°éÅª¨ú circles.txt ªº¤º®e
+	// ï¿½ï¿½ï¿½ï¿½10ï¿½Ó¶ï¿½Aï¿½Ã¿ï¿½X
+	for (i = 0; i < 10; i++) // ï¿½Hï¿½jï¿½ï¿½Åªï¿½ï¿½ circles.txt ï¿½ï¿½ï¿½ï¿½ï¿½e
 	{
-		fscanf(sCircle,"%s %d %d %d %d %d %d\n",cx[i].Name,&cx[i].x,&cx[i].y,&cx[i].radius,&cx[i].r,&cx[i].g,&cx[i].b); //¥H fscanf() Åª¨ú
+		fscanf(sCircle,"%s %d %d %d %d %d %d\n",cx[i].Name,&cx[i].x,&cx[i].y,&cx[i].radius,&cx[i].r,&cx[i].g,&cx[i].b); //ï¿½H fscanf() Åªï¿½ï¿½
 			
 	}
-	FILE *fclose(sCircle);			// Ãö³¬ÀÉ®×
+	fclose(sCircle);			// ï¿½ï¿½ï¿½ï¿½ï¿½É®ï¿½
 
-	for (i = 0; i < 10; i++ )	// ¥H°j°éÅã¥Ü¤º®e
+	for (i = 0; i < 10; i++ )	// ï¿½Hï¿½jï¿½ï¿½ï¿½ï¿½Ü¤ï¿½ï¿½e
 	{
 		printf("%s %d %d %d %d %d %d\n", cx[i].Name, cx[i].x, cx[i].y, cx[i].radius, cx[i].r, cx[i].g, cx[i].b);
-		setcolor(COLOR(cx[i].r,cx[i].g,cx[i].b));	// ³]©wÃC¦â
-		outtextxy(X(cx[i].x),Y(cx[i].y), cx[i].Name);  // Åã¥Ü¤å¦r
-		circle(X(cx[i].x), Y(cx[i].y), cx[i].radius);		// µe¥X¶ê
+		setcolor(COLOR(cx[i].r,cx[i].g,cx[i].b));	// ï¿½]ï¿½wï¿½Cï¿½ï¿½
+		outtextxy(X(cx[i].x),Y(cx[i].y), cx[i].Name);  // ï¿½ï¿½Ü¤ï¿½r
+		circle(X(cx[i].x), Y(cx[i].y), cx[i].radius);		// ï¿½eï¿½Xï¿½ï¿½
 		boss.x = boss.x + cx[i].x;
 		boss.y = boss.y + cx[i].y;
 		boss.radius = boss.radius + cx[i].radius;
@@ -73,9 +73,9 @@ int main()
 	boss.y = boss.y / 10;
 	boss.radius = boss.radius * 0.35f;
 
-	// µe¥X boss
-	setcolor(COLOR(255,255,255));  // ³]©wÃC¦â
-	outtextxy(X(boss.x), Y(boss.y), "boss");
+	// ï¿½eï¿½X boss
+	setcolor(COLOR(255,255,255));  // ï¿½]ï¿½wï¿½Cï¿½ï¿½
+	outtextxy(X(boss.x), Y(boss.y), boss.Name);
 	circle(X(boss.x), Y(boss.y), boss.radius);
 
 	while (!kbhit())

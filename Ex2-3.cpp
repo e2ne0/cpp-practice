@@ -1,23 +1,23 @@
-// ²Ä¤G¦¸¤W¾÷¦Ò¸Õ ------- ²Ä 3 ÃD 2 ¤À -------
+// ï¿½Ä¤Gï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½Ò¸ï¿½ ------- ï¿½ï¿½ 3 ï¿½D 2 ï¿½ï¿½ -------
 //
-// «Å§i¤@­Ó sCircle µ²ºc¡A¸Ì­±¥]§t
-//     ¶êªº x/y ®y¼Ð ÃC¦â r, g, b »P¥b®| radius (³£¬O¾ã¼Æ«¬§O)
-//     gen() ¨ç¦¡¡A¦³¨â­Ó¤Þ¼Æ¡A ix »P ir ¡A ³£¬O int «¬§O¡A¨S¦³¦^¶Ç­È
-//			 ¥\¯à : ³]©w¶êªº®y¼Ð¬O (ix, ix) ¥b®|¬O ir¡AÃC¦âÀH¾÷¥Í¦¨
+// ï¿½Å§iï¿½@ï¿½ï¿½ sCircle ï¿½ï¿½ï¿½cï¿½Aï¿½Ì­ï¿½ï¿½]ï¿½t
+//     ï¿½êªº x/y ï¿½yï¿½ï¿½ ï¿½Cï¿½ï¿½ r, g, b ï¿½Pï¿½bï¿½| radius (ï¿½ï¿½ï¿½Oï¿½ï¿½Æ«ï¿½ï¿½O)
+//     gen() ï¿½ç¦¡ï¿½Aï¿½ï¿½ï¿½ï¿½Ó¤Þ¼Æ¡A ix ï¿½P ir ï¿½A ï¿½ï¿½ï¿½O int ï¿½ï¿½ï¿½Oï¿½Aï¿½Sï¿½ï¿½ï¿½^ï¿½Ç­ï¿½
+//			 ï¿½\ï¿½ï¿½ : ï¿½]ï¿½wï¿½êªºï¿½yï¿½Ð¬O (ix, ix) ï¿½bï¿½|ï¿½O irï¿½Aï¿½Cï¿½ï¿½ï¿½Hï¿½ï¿½ï¿½Í¦ï¿½
 //
-//     draw()¨ç¦¡¡A¨S¦³¦^¶Ç­È¨S¦³¤Þ¼Æ¡A­t³d±N¶êµe¦b¿Ã¹õ¤W
+//     draw()ï¿½ç¦¡ï¿½Aï¿½Sï¿½ï¿½ï¿½^ï¿½Ç­È¨Sï¿½ï¿½ï¿½Þ¼Æ¡Aï¿½tï¿½dï¿½Nï¿½ï¿½eï¿½bï¿½Ã¹ï¿½ï¿½W
 //
-// ´£¥Ü:ÃC¦â¥Î rand() % 155 + 100 
+// ï¿½ï¿½ï¿½ï¿½:ï¿½Cï¿½ï¿½ï¿½ rand() % 155 + 100 
 //
-// ¦b¥Dµ{¦¡¥H sCircle µ²ºc¥]§t10­Ó¤¸¯Àªº¤@ºûµ²ºc°}¦C®Ú¾Ú¥H¤Uªºµù¸Ñ§¹¦¨©Ò»Ý­nªºµ{¦¡½X¡A
-// ­n¨D¡G¥Dµ{¥H°j°é³z¹Lµ²ºc°}¦C¤¤ªº¨C¤@­Ó¤¸¯À©I¥s gen() ¨ç¦¡ »P draw()¨ç¦¡ ¨Óµe¥X³o10­Ó¶ê
-//    §¹¦¨ ex2-3.jpg
+// ï¿½bï¿½Dï¿½{ï¿½ï¿½ï¿½H sCircle ï¿½ï¿½ï¿½cï¿½]ï¿½t10ï¿½Ó¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½cï¿½}ï¿½Cï¿½Ú¾Ú¥Hï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Ò»Ý­nï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½Xï¿½A
+// ï¿½nï¿½Dï¿½Gï¿½Dï¿½{ï¿½Hï¿½jï¿½ï¿½zï¿½Lï¿½ï¿½ï¿½cï¿½}ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½@ï¿½Ó¤ï¿½ï¿½ï¿½ï¿½Iï¿½s gen() ï¿½ç¦¡ ï¿½P draw()ï¿½ç¦¡ ï¿½Óµeï¿½Xï¿½o10ï¿½Ó¶ï¿½
+//    ï¿½ï¿½ï¿½ï¿½ ex2-3.jpg
 // 
-//  draw ·|¥Î¨ìªº¨ç¦¡ 
-// 	setcolor(COLOR( , ,));  // ³]©wÃC¦â
+//  draw ï¿½|ï¿½Î¨ìªºï¿½ç¦¡ 
+// 	setcolor(COLOR( , ,));  // ï¿½]ï¿½wï¿½Cï¿½ï¿½
 //  circle(X(), Y(), );
 
-#define EX3
+//#define EX3
 #ifdef EX3
 
 #define _CRT_SECURE_NO_WARNINGS 1
@@ -29,7 +29,7 @@
 #include "functions.h"
 
 
-// «Å§i sCircle µ²ºc
+// ï¿½Å§i sCircle ï¿½ï¿½ï¿½c
 struct sCircle
 {
 	int x, y, radius, r, g, b;
@@ -53,18 +53,18 @@ struct sCircle
 int main()
 {
 	int i;
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ²Ä3ÃD");
-	registermousehandler(WM_MOUSEMOVE, move_handler);		// µù¥U·Æ¹«²¾°Êªº³B²z¨ç¦¡
-	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // µù¥U·Æ¹«¥ªÁä«ö¤Uªº³B²z¨ç¦¡
-	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// µù¥U·Æ¹«¥ªÁäÄÀ©ñªº³B²z¨ç¦¡
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ï¿½ï¿½3ï¿½D");
+	registermousehandler(WM_MOUSEMOVE, move_handler);		// ï¿½ï¿½ï¿½Uï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Êªï¿½ï¿½Bï¿½zï¿½ç¦¡
+	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // ï¿½ï¿½ï¿½Uï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½Bï¿½zï¿½ç¦¡
+	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// ï¿½ï¿½ï¿½Uï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ñªº³Bï¿½zï¿½ç¦¡
 	srand(time(NULL));
 
-	struct sCircle cx[10];				// «Å§i sCircle µ²ºc°}¦C ¥]§t 10 ­Ó¤¸¯À
+	struct sCircle cx[10];				// ï¿½Å§i sCircle ï¿½ï¿½ï¿½cï¿½}ï¿½C ï¿½]ï¿½t 10 ï¿½Ó¤ï¿½ï¿½ï¿½
 
-	for (i = 0; i < 10; i++) //¥Î°j°é
+	for (i = 0; i < 10; i++) //ï¿½Î°jï¿½ï¿½
 	{
-		cx[i].gen(-300 + i * 60, -300 + i * 60, i * 6 + 10);		// ©I¥s gen ®É¡A¶Ç¤J  -300+i*60, i*6+10
-		cx[i].draw() ;		// ©I¥s draw µe¥X¦Û¤v
+		cx[i].gen(-300 + i * 60, -300 + i * 60, i * 6 + 10);		// ï¿½Iï¿½s gen ï¿½É¡Aï¿½Ç¤J  -300+i*60, i*6+10
+		cx[i].draw() ;		// ï¿½Iï¿½s draw ï¿½eï¿½Xï¿½Û¤v
 	}
 	while (!kbhit())
 	{

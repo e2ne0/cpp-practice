@@ -17,7 +17,7 @@
 // 呼叫 pchar(5, '+')  +++++
 // 呼叫 pchar('@')     @@@@@
 // 呼叫 pchar(7)       *******
-//
+
 
 //#define EX4
 #ifdef EX4
@@ -29,7 +29,31 @@ using namespace std;
 
 // pchar 的原型宣告寫在這裡
 
-
+int pchar(char ch)
+{
+	cout.fill(ch);
+	cout << setw(5) << ch << endl;
+	return cout.good();
+}
+int pchar(bool b = true)
+{
+	if (b)
+	{
+		cout << "#####" << endl;
+	}
+	else
+	{
+		
+		cout << "*****" << endl;
+	}
+	return cout.good();
+}
+int pchar(int n, char ch = '*')
+{
+	cout.fill(ch);
+	cout << setw(n) << ch << endl;
+	return cout.good();
+}
 int main(void)
 {
 	cout << "呼叫 pchar(),      "; pchar();

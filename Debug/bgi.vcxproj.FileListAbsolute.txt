@@ -1,2 +1,4 @@
 C:\Users\e2ne0\Downloads\bgi EX2-2\Debug\bgi.exe
 C:\Users\e2ne0\Downloads\bgi EX2-2\Debug\bgi.pdb
+C:\Users\e2ne0\Documents\GitHub\cpp-practice\Debug\bgi.exe
+C:\Users\e2ne0\Documents\GitHub\cpp-practice\Debug\bgi.pdb

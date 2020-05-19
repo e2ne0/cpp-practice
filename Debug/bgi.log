@@ -1,6 +1,2 @@
-﻿  Ex2-2.cpp
-  Ex2-3.cpp
-C:\Users\e2ne0\Downloads\bgi EX2-2\Ex2-3.cpp(60,12): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
-  正在產生程式碼...
-LINK : warning LNK4031: 未指定子系統，假設使用 CONSOLE
-  bgi.vcxproj -> C:\Users\e2ne0\Downloads\bgi EX2-2\Debug\bgi.exe
+﻿  Ex2-4.cpp
+  bgi.vcxproj -> C:\Users\e2ne0\Documents\GitHub\cpp-practice\Debug\bgi.exe
