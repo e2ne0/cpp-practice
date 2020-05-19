@@ -1,19 +1,19 @@
-// ²Ä¤G¦¸¤W¾÷¦Ò¸Õ ------- ²Ä 5 ÃD 2 ¤À -------
+// ç¬¬äºŒæ¬¡ä¸Šæ©Ÿè€ƒè©¦ ------- ç¬¬ 5 é¡Œ 2 åˆ† -------
 //
-// «Å§i¤@­Ó cCircle Ãş§O¡A¸Ì­±¥]§t
-//  ¨p¦³¥]§t(³£¬O¾ã¼Æ«¬§O)
-//     ¶êªº x/y ®y¼Ğ»P ¥b®| radius (³£¬O int «¬§O)
-//  ¤½¦³¥]§t
-//     ÃC¦â r g b (³£¬O int «¬§O) 
-//     init()  ¨ç¦¡¡A³]©w®y¼Ğ¦b 100, 100, ¥b®|¬° 50 ÃC¦â¬°¥Õ¦â 255 255 255
-//     setRadius() ¨ç¦¡¡A¦³ 1­Ó int ¤Ş¼Æ«¬§O¡A¶Ç¤J¶êªº¥b®| 
-//     setColor() ¨ç¦¡¡A¦³ 3 ­Ó int ¤Ş¼Æ«¬§O¡A¶Ç¤J¶êªºÃC¦â r g b
-//	   draw()  ¬°¤Í½Ë¨ç¦¡¡A±N¶Ç¤Jªº cCircle ª«¥ó¡Aµe¦b¿Ã¹õ¤W
-//     ³o¤T­Ó¨ç¦¡³£¤£¥Î¦^¶Ç­È
+// å®£å‘Šä¸€å€‹ cCircle é¡åˆ¥ï¼Œè£¡é¢åŒ…å«
+//  ç§æœ‰åŒ…å«(éƒ½æ˜¯æ•´æ•¸å‹åˆ¥)
+//     åœ“çš„ x/y åº§æ¨™èˆ‡ åŠå¾‘ radius (éƒ½æ˜¯ int å‹åˆ¥)
+//  å…¬æœ‰åŒ…å«
+//     é¡è‰² r g b (éƒ½æ˜¯ int å‹åˆ¥) 
+//     init()  å‡½å¼ï¼Œè¨­å®šåº§æ¨™åœ¨ 100, 100, åŠå¾‘ç‚º 50 é¡è‰²ç‚ºç™½è‰² 255 255 255
+//     setRadius() å‡½å¼ï¼Œæœ‰ 1å€‹ int å¼•æ•¸å‹åˆ¥ï¼Œå‚³å…¥åœ“çš„åŠå¾‘ 
+//     setColor() å‡½å¼ï¼Œæœ‰ 3 å€‹ int å¼•æ•¸å‹åˆ¥ï¼Œå‚³å…¥åœ“çš„é¡è‰² r g b
+//	   draw()  ç‚ºå‹èª¼å‡½å¼ï¼Œå°‡å‚³å…¥çš„ cCircle ç‰©ä»¶ï¼Œç•«åœ¨è¢å¹•ä¸Š
+//     é€™ä¸‰å€‹å‡½å¼éƒ½ä¸ç”¨å›å‚³å€¼
 //
-//  ®Ú¾Ú¥Dµ{¦¡ªºµù¸Ñ¡A§¹¦¨©Ò»İªºµ{¦¡½X¡A¨Ãµe¥X ex2-5.jpg ªºµ²ªG
+//  æ ¹æ“šä¸»ç¨‹å¼çš„è¨»è§£ï¼Œå®Œæˆæ‰€éœ€çš„ç¨‹å¼ç¢¼ï¼Œä¸¦ç•«å‡º ex2-5.jpg çš„çµæœ
 // 
-//  ­n¨D: ¤Í½Ë¨ç¦¡ draw() »P setRadius() ¨ç¦¡ªº¹êÅé¥²¶·¼g¦bÃş§O¥~
+//  è¦æ±‚: å‹èª¼å‡½å¼ draw() èˆ‡ setRadius() å‡½å¼çš„å¯¦é«”å¿…é ˆå¯«åœ¨é¡åˆ¥å¤–
 //
 
 //#define EX5
@@ -26,28 +26,27 @@
 #include <ctime>
 #include "functions.h"
 
-// «Å§i cCircle Ãş§O
+// å®£å‘Š cCircle é¡åˆ¥
 
-
-// draw() ¤Í½Ë¨ç¦¡
+// draw() å‹èª¼å‡½å¼
 
 int main()
 {
 	int i;
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ²Ä 5 ÃD");
-	registermousehandler(WM_MOUSEMOVE, move_handler);		// µù¥U·Æ¹«²¾°Êªº³B²z¨ç¦¡
-	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // µù¥U·Æ¹«¥ªÁä«ö¤Uªº³B²z¨ç¦¡
-	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// µù¥U·Æ¹«¥ªÁäÄÀ©ñªº³B²z¨ç¦¡
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ç¬¬ 5 é¡Œ");
+	registermousehandler(WM_MOUSEMOVE, move_handler);		// è¨»å†Šæ»‘é¼ ç§»å‹•çš„è™•ç†å‡½å¼
+	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // è¨»å†Šæ»‘é¼ å·¦éµæŒ‰ä¸‹çš„è™•ç†å‡½å¼
+	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// è¨»å†Šæ»‘é¼ å·¦éµé‡‹æ”¾çš„è™•ç†å‡½å¼
 	srand(time(NULL));
 
-	cCircle c1, c2, c3, c4;		// ¥H cCircle «Å§i¥|­Óª«¥ó c1, c2, c3, c4
-	// c1 ©I¥s init, µM«á©I¥s draw µe¥X c1
+	cCircle c1, c2, c3, c4;		// ä»¥ cCircle å®£å‘Šå››å€‹ç‰©ä»¶ c1, c2, c3, c4
+	// c1 å‘¼å« init, ç„¶å¾Œå‘¼å« draw ç•«å‡º c1
 	
-	// c2 ©I¥s init, µM«á©I¥s setRadius ³]©w¥b®|¬° 150, ©I¥s setColor ³]©wÃC¦â¬° 255, 0, 0, ©I¥s draw µe¥X c2
+	// c2 å‘¼å« init, ç„¶å¾Œå‘¼å« setRadius è¨­å®šåŠå¾‘ç‚º 150, å‘¼å« setColor è¨­å®šé¡è‰²ç‚º 255, 0, 0, å‘¼å« draw ç•«å‡º c2
 	
-	// c3 ©I¥s init, µM«á©I¥s setRadius ³]©w¥b®|¬° 100, ©I¥s setColor ³]©wÃC¦â¬° 0, 255, 0, ©I¥s draw µe¥X c3
+	// c3 å‘¼å« init, ç„¶å¾Œå‘¼å« setRadius è¨­å®šåŠå¾‘ç‚º 100, å‘¼å« setColor è¨­å®šé¡è‰²ç‚º 0, 255, 0, å‘¼å« draw ç•«å‡º c3
 	
-	// c4 ©I¥s init, µM«á©I¥s setRadius ³]©w¥b®|¬° 50, ©I¥s setColor ³]©wÃC¦â¬° 0, 0, 255,  ©I¥s draw µe¥X c4
+	// c4 å‘¼å« init, ç„¶å¾Œå‘¼å« setRadius è¨­å®šåŠå¾‘ç‚º 50, å‘¼å« setColor è¨­å®šé¡è‰²ç‚º 0, 0, 255,  å‘¼å« draw ç•«å‡º c4
 	
 	
 	while (!kbhit())
