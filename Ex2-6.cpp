@@ -34,15 +34,35 @@
 #include <ctime>
 #include "functions.h"
 
-// 宣告 CMouse 類別
-class 
+// 宣告 cMouse 類別
+class cMouse
 {
 private:
 	int *pos, *color;
 public:
-	(/* args */);
-	~();
+	cMouse(int x = 0, int y = 0, int c = COLOR_WHITE);
+	~cMouse();
+	void draw()
+	{
+		drawColorBox(*pos,*pos + 1 , );
+	}
 };
+
+cMouse::cMouse(int x = 0, int y = 0, int c = COLOR_WHITE)
+{
+	pos = (int*)malloc(sizeof(int)*2);
+	color = (int*)malloc(sizeof(int)*1);
+	*pos = &x;
+	*pos + 1 = &y;
+	*color = &c;
+}
+
+cMouse::~cMouse()
+{
+	free(pos);
+	free(color);
+}
+
 
 
 // draw()函式 會用到
