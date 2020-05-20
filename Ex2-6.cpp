@@ -44,9 +44,9 @@ public:
 	~cMouse();
 	void draw()
 	{
-		drawColorBox(*pos,*pos + 1 , );
+		drawColorBox(*pos,*(pos + 1), *color);
 	}
-	void swap();
+	void swap(int& ix, int& iy);
 };
 // draw()函式 會用到
 // drawColorBox(, , ); // 三個引數分別是 x, y ,color
@@ -64,7 +64,7 @@ cMouse::cMouse()
 cMouse::~cMouse()
 {
 	free(pos);
-	delete color;
+	free(color);
 }
 
 void cMouse ::swap(int &ix, int &iy)
@@ -72,7 +72,7 @@ void cMouse ::swap(int &ix, int &iy)
 	int temp = ix;
 	ix = iy;
 	iy = temp;
-	*(pos) = ix
+	*(pos) = ix;
 	*(pos + 1) = iy;
 }
 

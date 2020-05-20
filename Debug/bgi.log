@@ -1,11 +1,5 @@
-﻿  Ex2-1.cpp
-C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-1.cpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+﻿  Ex2-6.cpp
+C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-6.cpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
 C:\Users\e2ne0\Documents\GitHub\cpp-practice\functions.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
-C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-1.cpp(42,39): error C2001: 常數中包含新行字元
-C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-1.cpp(43,2): error C2146: 語法錯誤: 遺漏 ')' (在識別項 'registermousehandler' 之前)
-C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-1.cpp(43,2): error C2146: 語法錯誤: 遺漏 ';' (在識別項 'registermousehandler' 之前)
-C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-1.cpp(46,12): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
-C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-1.cpp(74,28): warning C4244: '=': 將 'float' 轉換為 'int'，由於類型不同，可能導致資料遺失
-  Ex2-5.cpp
-C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-5.cpp(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
-  正在產生程式碼...
+C:\Users\e2ne0\Documents\GitHub\cpp-practice\Ex2-6.cpp(85,12): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+  bgi.vcxproj -> C:\Users\e2ne0\Documents\GitHub\cpp-practice\Debug\bgi.exe
