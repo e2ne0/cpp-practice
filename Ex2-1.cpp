@@ -50,13 +50,12 @@ int main()
 	if (sCircle == NULL) {
 		printf("�ɮ׵L�k�}��");
 	}
-	struct	sCircle cx[10], boss = { "boss",0,0,0,255,255,255 };// �ŧi���c�}�C cx �P boss�A�b�ŧi boss ��, �]�w��l�Ȭ� "boss",0,0,0,255,255,255
+	struct	sCircle cx[10], boss = { "boss",0,0,0,255,255,255 };// 宣告結構陣列 cx 與 boss，在宣告 boss 時, 設定初始值為 "boss",0,0,0,255,255,255
 
 	// 產生10個圓，並輸出
 	for (i = 0; i < 10; i++) // 以迴圈讀取 circles.txt 的內容
 	{
-		fscanf(sCircle,"%s %d %d %d %d %d %d\n",cx[i].Name,&cx[i].x,&cx[i].y,&cx[i].radius,&cx[i].r,&cx[i].g,&cx[i].b); //�H fscanf() Ū��
-			
+		fscanf(sCircle,"%s %d %d %d %d %d %d\n",cx[i].Name,&cx[i].x,&cx[i].y,&cx[i].radius,&cx[i].r,&cx[i].g,&cx[i].b); //以 fscanf() 讀取
 	}
 	fclose(sCircle);			// 關閉檔案
 
