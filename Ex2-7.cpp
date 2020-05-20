@@ -31,7 +31,7 @@
 //  
 //
 
-//#define EX7
+#define EX7
 #ifdef EX7
 
 #define _CRT_SECURE_NO_WARNINGS 1
@@ -41,6 +41,7 @@
 #include <windows.h>
 #include <ctime>
 #include "functions.h"
+#include "CMouse.h"
 
 #define NORMAL_COLOR COLOR_YELLOW
 #define DANGER_COLOR COLOR_RED
@@ -83,18 +84,18 @@ int main()
 	char cIn;
 	int status;
 	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 第7題");
-							// 宣告 mx 建立時就會自動呼叫 CMouse 建構
-							// 呼叫 setPos 位置設定在 (-120, 120)
-							// 呼叫 setColor，顏色設定成 COLOR_WHITE, COLOR_BLACK
+	CMouse mx;						// 宣告 mx 建立時就會自動呼叫 CMouse 建構
+	mx.setPos(-120, 120);						// 呼叫 setPos 位置設定在 (-120, 120)
+	mx.setColor(COLOR_WHITE, COLOR_BLACK);						// 呼叫 setColor，顏色設定成 COLOR_WHITE, COLOR_BLACK
 	do {
 		cleardevice();
 		drawFence();	// 畫出範圍
-						// 畫出老鼠
+		mx.draw()				// 畫出老鼠
 		swapbuffers();
 		getch();		// 輸入
-						// 讓老鼠自己更新狀態
+		mx.update()				// 讓老鼠自己更新狀態
 		rewind(stdin);
-	} while (	);
+	} while ();
 
 	cleardevice();
 	drawFence();

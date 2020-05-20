@@ -23,7 +23,7 @@
 //    
 //
 
-#define EX6
+//#define EX6
 #ifdef EX6
 
 #define _CRT_SECURE_NO_WARNINGS 1
