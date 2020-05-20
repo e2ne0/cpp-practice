@@ -40,50 +40,55 @@ class cMouse
 private:
 	int *pos, *color;
 public:
-	cMouse(int x = 0, int y = 0, int c = COLOR_WHITE);
+	cMouse();
 	~cMouse();
 	void draw()
 	{
 		drawColorBox(*pos,*pos + 1 , );
 	}
+	void swap();
 };
+// draw()函式 會用到
+// drawColorBox(, , ); // 三個引數分別是 x, y ,color
 
-cMouse::cMouse(int x = 0, int y = 0, int c = COLOR_WHITE)
+// 建構元, 結構元, swap 函式寫在外面
+cMouse::cMouse()
 {
 	pos = (int*)malloc(sizeof(int)*2);
-	color = (int*)malloc(sizeof(int)*1);
-	*pos = &x;
-	*pos + 1 = &y;
-	*color = &c;
+	*(pos) = 0;
+	*(pos + 1) = 0;
+	color = new int;
+	*color = COLOR_WHITE;
 }
 
 cMouse::~cMouse()
 {
 	free(pos);
-	free(color);
+	delete color;
 }
 
-
-
-// draw()函式 會用到
-// drawColorBox(, , ); // 三個引數分別是 x, y ,color
-
-// 建構元, 結構元, swap 函式寫在外面
-
+void cMouse ::swap(int &ix, int &iy)
+{
+	int temp = ix;
+	ix = iy;
+	iy = temp;
+	*(pos) = ix
+	*(pos + 1) = iy;
+}
 
 int main()
 {
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 第 6 題");
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2-6");
 	registermousehandler(WM_MOUSEMOVE, move_handler);		// 註冊滑鼠移動的處理函式
 	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // 註冊滑鼠左鍵按下的處理函式
 	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// 註冊滑鼠左鍵釋放的處理函式
 	srand(time(NULL));
 
 	int x = 100, y = -100;
-					// 宣告 mx
-					// mx 呼叫 draw
-					// mx 呼叫 swap 並將 x 與 y 傳入
-					// mx 呼叫 draw
+	cMouse mx;				// 宣告 mx
+	mx.draw();				// mx 呼叫 draw
+	mx.swap(x,y);				// mx 呼叫 swap 並將 x 與 y 傳入
+	mx.draw();				// mx 呼叫 draw
 
 	outtextxy(X(x), Y(y), "SWAP");
 
