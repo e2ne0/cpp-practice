@@ -1,6 +1,6 @@
-// ²Ä¤G¦¸¤W¾÷¦Ò¸Õ ------- ²Ä 2 ÃD 2 ¤À -------
+// ç¬¬äºŒæ¬¡ä¸Šæ©Ÿè€ƒè©¦ ------- ç¬¬ 2 é¡Œ 2 åˆ† -------
 // 
-// §Q¥Î C++ ªº cout »P¬ÛÃöªº°Ñ¼Æ³]©w§¹¦¨¥H¤Uªº¿é¥X
+// åˆ©ç”¨ C++ çš„ cout èˆ‡ç›¸é—œçš„åƒæ•¸è¨­å®šå®Œæˆä»¥ä¸‹çš„è¼¸å‡º
 //
 //  Apple          1.1
 //  Orange       12.21
@@ -9,9 +9,9 @@
 //  ##Orange12.21*****
 //  ####Pear123.321***
 //
-// §A·|¥Î¨ìªº cout ¥\¯à
-// setiosflags(ios::left)¡Bresetiosflags(ios::left)¡Bsetfill()¡B
-// cout.width()¡Bcout.fill()¡Bsetw()
+// ä½ æœƒç”¨åˆ°çš„ cout åŠŸèƒ½
+// setiosflags(ios::left)ã€resetiosflags(ios::left)ã€setfill()ã€
+// cout.width()ã€cout.fill()ã€setw()
 
 
 //#define EX2

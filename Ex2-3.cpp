@@ -1,20 +1,20 @@
-// �ĤG���W���Ҹ� ------- �� 3 �D 2 �� -------
+// 第二次上機考試 ------- 第 3 題 2 分 -------
 //
-// �ŧi�@�� sCircle ���c�A�̭��]�t
-//     �ꪺ x/y �y�� �C�� r, g, b �P�b�| radius (���O��ƫ��O)
-//     gen() �禡�A����Ӥ޼ơA ix �P ir �A ���O int ���O�A�S���^�ǭ�
-//			 �\�� : �]�w�ꪺ�y�ЬO (ix, ix) �b�|�O ir�A�C���H���ͦ�
+// 宣告一個 sCircle 結構，裡面包含
+//     圓的 x/y 座標 顏色 r, g, b 與半徑 radius (都是整數型別)
+//     gen() 函式，有兩個引數， ix 與 ir ， 都是 int 型別，沒有回傳值
+//			 功能 : 設定圓的座標是 (ix, ix) 半徑是 ir，顏色隨機生成
 //
-//     draw()�禡�A�S���^�ǭȨS���޼ơA�t�d�N��e�b�ù��W
+//     draw()函式，沒有回傳值沒有引數，負責將圓畫在螢幕上
 //
-// ����:�C��� rand() % 155 + 100 
+// 提示:顏色用 rand() % 155 + 100 
 //
-// �b�D�{���H sCircle ���c�]�t10�Ӥ������@�����c�}�C�ھڥH�U�����ѧ����һݭn���{���X�A
-// �n�D�G�D�{�H�j��z�L���c�}�C�����C�@�Ӥ����I�s gen() �禡 �P draw()�禡 �ӵe�X�o10�Ӷ�
-//    ���� ex2-3.jpg
+// 在主程式以 sCircle 結構包含10個元素的一維結構陣列根據以下的註解完成所需要的程式碼，
+// 要求：主程以迴圈透過結構陣列中的每一個元素呼叫 gen() 函式 與 draw()函式 來畫出這10個圓
+//    完成 ex2-3.jpg
 // 
-//  draw �|�Ψ쪺�禡 
-// 	setcolor(COLOR( , ,));  // �]�w�C��
+//  draw 會用到的函式 
+// 	setcolor(COLOR( , ,));  // 設定顏色
 //  circle(X(), Y(), );
 
 //#define EX3
@@ -30,7 +30,7 @@
 
 
 
-// �ŧi sCircle ���c
+// 宣告 sCircle 結構
 struct sCircle
 {
 	int x, y, radius, r, g, b;
@@ -55,17 +55,17 @@ int main()
 {
 	int i;
 	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 ��3�D");
-	registermousehandler(WM_MOUSEMOVE, move_handler);		// ���U�ƹ����ʪ��B�z�禡
-	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // ���U�ƹ�������U���B�z�禡
-	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// ���U�ƹ��������񪺳B�z�禡
+	registermousehandler(WM_MOUSEMOVE, move_handler);		// 註冊滑鼠移動的處理函式
+	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // 註冊滑鼠左鍵按下的處理函式
+	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// 註冊滑鼠左鍵釋放的處理函式
 	srand(time(NULL));
 
-	struct sCircle cx[10];				// �ŧi sCircle ���c�}�C �]�t 10 �Ӥ���
+	struct sCircle cx[10];				// 宣告 sCircle 結構陣列 包含 10 個元素
 
-	for (i = 0; i < 10; i++) //�ΰj��
+	for (i = 0; i < 10; i++) //用迴圈
 	{
-		cx[i].gen(-300 + i * 60, -300 + i * 60, i * 6 + 10);		// �I�s gen �ɡA�ǤJ  -300+i*60, i*6+10
-		cx[i].draw() ;		// �I�s draw �e�X�ۤv
+		cx[i].gen(-300 + i * 60, -300 + i * 60, i * 6 + 10);		// 呼叫 gen 時，傳入  -300+i*60, i*6+10
+		cx[i].draw() ;		// 呼叫 draw 畫出自己
 	}
 	while (!kbhit())
 	{
