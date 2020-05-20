@@ -35,12 +35,9 @@ public:
 	int r,g,b;
 	void init()
 	{
-		x = 100;
-		y = 100;
+		x = y = 100;
 		radius = 50;
-		r = 255;
-		g = 255;
-		b = 255;
+		r = g = b = 255;
 	}
 	void setRadius(int _radius);
 	
