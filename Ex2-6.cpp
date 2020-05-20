@@ -23,7 +23,7 @@
 //    
 //
 
-//#define EX6
+#define EX6
 #ifdef EX6
 
 #define _CRT_SECURE_NO_WARNINGS 1
@@ -35,6 +35,14 @@
 #include "functions.h"
 
 // 宣告 CMouse 類別
+class 
+{
+private:
+	int *pos, *color;
+public:
+	(/* args */);
+	~();
+};
 
 
 // draw()函式 會用到
