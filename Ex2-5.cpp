@@ -16,7 +16,7 @@
 //  要求: 友誼函式 draw() 與 setRadius() 函式的實體必須寫在類別外
 //
 
-//#define EX5
+#define EX5
 #ifdef EX5
 
 #include ".\BGIKernel\graphics.h"
@@ -27,8 +27,41 @@
 #include "functions.h"
 
 // 宣告 cCircle 類別
+class cCircle
+{
+private:
+	int x,y,radius;
+public:
+	int r,g,b;
+	void init()
+	{
+		x = y = 100;
+		radius = 50;
+		r = g = b = 255;
+	}
+	void setRadius(int _radius);
+	
+	void setColor(int _r, int _g, int _b)
+	{
+		r = _r;
+		g = _g;
+		b = _b;
+	}
+	friend void :: draw(cCircle& _cCircle);
+};
+
 
 // draw() 友誼函式
+void draw(cCircle& _cCircle)
+{
+	setcolor(COLOR(_cCircle.r,_cCircle.g,_cCircle.b));
+	circle(X(_cCircle.x),Y(_cCircle.y),_cCircle.radius)
+}
+
+void cCircle::setRadius(int _radius)
+{
+	radius = _radius;
+}
 
 int main()
 {
@@ -41,13 +74,23 @@ int main()
 
 	cCircle c1, c2, c3, c4;		// 以 cCircle 宣告四個物件 c1, c2, c3, c4
 	// c1 呼叫 init, 然後呼叫 draw 畫出 c1
-	
+	c1.init();
+	draw(c1);
 	// c2 呼叫 init, 然後呼叫 setRadius 設定半徑為 150, 呼叫 setColor 設定顏色為 255, 0, 0, 呼叫 draw 畫出 c2
-	
+	c2.init();
+	c2.setRadius(150);
+	c2.setColor(255,0,0);
+	draw(c2);
 	// c3 呼叫 init, 然後呼叫 setRadius 設定半徑為 100, 呼叫 setColor 設定顏色為 0, 255, 0, 呼叫 draw 畫出 c3
-	
+	c3.init();
+	c3.setRadius(100);
+	c3.setColor(0,255,0);
+	draw(c3);
 	// c4 呼叫 init, 然後呼叫 setRadius 設定半徑為 50, 呼叫 setColor 設定顏色為 0, 0, 255,  呼叫 draw 畫出 c4
-	
+	c4.init();
+	c4.setRadius(50);
+	c4.setColor(0,0,50);
+	draw(c4);
 	
 	while (!kbhit())
 	{
