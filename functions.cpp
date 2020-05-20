@@ -10,30 +10,30 @@
 void move_handler(int x, int y)
 {
 	int sx, sy;
-	sx = x - SCREENWIDTH / 2; // Âà´«¨ì 2D ¥­­±®y¼Ğ
+	sx = x - SCREENWIDTH / 2; // è½‰æ›åˆ° 2D å¹³é¢åº§æ¨™
 	sy = SCREENHEIGHT / 2 - y;
 	//cleardevice();
-	//drawRect(sx, sy, 200, 100); // ªø¤è§Î¡Aµ¹¤¤¤ßÂI»PÃäªø
+	//drawRect(sx, sy, 200, 100); // é•·æ–¹å½¢ï¼Œçµ¦ä¸­å¿ƒé»èˆ‡é‚Šé•·
 	//swapbuffers();
 }
 
 void lbDown_handler(int x, int y)
 {
 	int sx, sy;
-	sx = x - SCREENWIDTH / 2; // Âà´«¨ì 2D ¥­­±®y¼Ğ
+	sx = x - SCREENWIDTH / 2; // è½‰æ›åˆ° 2D å¹³é¢åº§æ¨™
 	sy = SCREENHEIGHT / 2 - y;
 	//cleardevice();
-	//drawRect(sx, sy, 200, 100); // ªø¤è§Î¡Aµ¹¤¤¤ßÂI»PÃäªø
+	//drawRect(sx, sy, 200, 100); // é•·æ–¹å½¢ï¼Œçµ¦ä¸­å¿ƒé»èˆ‡é‚Šé•·
 	//swapbuffers();
 }
 
 void lbUp_handler(int x, int y)
 {
 	int sx, sy;
-	sx = x - SCREENWIDTH / 2; // Âà´«¨ì 2D ¥­­±®y¼Ğ
+	sx = x - SCREENWIDTH / 2; // è½‰æ›åˆ° 2D å¹³é¢åº§æ¨™
 	sy = SCREENHEIGHT / 2 - y;
 	//cleardevice();
-	//circle(X(sx), Y(sy), 100); // ªø¤è§Î¡Aµ¹¤¤¤ßÂI»PÃäªø
+	//circle(X(sx), Y(sy), 100); // é•·æ–¹å½¢ï¼Œçµ¦ä¸­å¿ƒé»èˆ‡é‚Šé•·
 	//swapbuffers();
 }
 
@@ -70,13 +70,13 @@ void drawSizeBox(int cx, int cy, int color, int size)
 void drawBoxMan(int cx, int cy, int bodycolor, int eyecolor, int mouthcolor)
 {
 	drawSizeBox(cx, cy, bodycolor, 100);
-	drawSizeBox(cx-20, cy+20, eyecolor, 16); // ¥ª²´·ú
-	drawSizeBox(cx+20, cy+20, eyecolor, 16); // ¥k²´·ú	
-	drawSizeBox(cx + 20, cy - 25, mouthcolor, 10); // ¼L¤Ú
-	drawSizeBox(cx + 10, cy - 25, mouthcolor, 10); // ¼L¤Ú
-	drawSizeBox(cx , cy - 25, mouthcolor, 10); // ¼L¤Ú
-	drawSizeBox(cx - 10, cy - 25, mouthcolor, 10); // ¼L¤Ú
-	drawSizeBox(cx - 20, cy - 25, mouthcolor, 10); // ¼L¤Ú
+	drawSizeBox(cx-20, cy+20, eyecolor, 16); // å·¦çœ¼ç›
+	drawSizeBox(cx+20, cy+20, eyecolor, 16); // å³çœ¼ç›	
+	drawSizeBox(cx + 20, cy - 25, mouthcolor, 10); // å˜´å·´
+	drawSizeBox(cx + 10, cy - 25, mouthcolor, 10); // å˜´å·´
+	drawSizeBox(cx , cy - 25, mouthcolor, 10); // å˜´å·´
+	drawSizeBox(cx - 10, cy - 25, mouthcolor, 10); // å˜´å·´
+	drawSizeBox(cx - 20, cy - 25, mouthcolor, 10); // å˜´å·´
 }
 
 void drawColorBox(int cx, int cy, int color)
@@ -163,12 +163,12 @@ void drawTri(int cx, int cy, int length)
 	x1 = (float)X(cx); y1 = (float)Y(cy + length / sqrt3);
 	x2 = X(cx - length*0.5f); y2 = Y(cy - 0.5f*length / sqrt3);
 	x3 = X(cx + length*0.5f); y3 = Y(cy - 0.5f*length / sqrt3);
-	// ¤èªk¤@¡Glineto ¤£·|ÅÜ§ó current point ªº¦ì¸m
+	// æ–¹æ³•ä¸€ï¼šlineto ä¸æœƒè®Šæ›´ current point çš„ä½ç½®
 	//line(x1, y1, x2, y2);
 	//line(x2, y2, x3, y3);
 	//line(x3, y3, x1, y1);
 
-	// ¤èªk¤G¡Gmoveto ³]©w current point ªº¦ì¸m
+	// æ–¹æ³•äºŒï¼šmoveto è¨­å®š current point çš„ä½ç½®
 	moveto((int)x1, (int)y1);
 	lineto((int)x2, (int)y2);
 	lineto((int)x3, (int)y3);

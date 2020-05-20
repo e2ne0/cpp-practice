@@ -6,9 +6,9 @@
 #define M_PI 3.1415926f
 #define ATOR(x)  ((x)*M_PI/180.f)
 //
-// �b�e�ϮɡA�ϥΤp�ǩҾǪ��åd��y�Шt(2D����)�A�ù��������I�O (0,0)
+// 在畫圖時，使用小學所學的笛卡兒座標系(2D平面)，螢幕正中心點是 (0,0)
 //
-#define X(x) (SCREENWIDTH/2 + (x))  // �ഫ��e�Ϫ��y��
+#define X(x) (SCREENWIDTH/2 + (x))  // 轉換到畫圖的座標
 #define Y(y) (SCREENHEIGHT/2 - (y))
 
 //------ Color
