@@ -16,7 +16,7 @@
 //  要求: 友誼函式 draw() 與 setRadius() 函式的實體必須寫在類別外
 //
 
-#define EX5
+//#define EX5
 #ifdef EX5
 
 #include ".\BGIKernel\graphics.h"
@@ -35,9 +35,12 @@ public:
 	int r,g,b;
 	void init()
 	{
-		x = y = 100;
+		x = 100;
+		y = 100;
 		radius = 50;
-		r = g = b = 255;
+		r = 255;
+		g = 255;
+		b = 255;
 	}
 	void setRadius(int _radius);
 	
@@ -47,7 +50,7 @@ public:
 		g = _g;
 		b = _b;
 	}
-	friend void :: draw(cCircle& _cCircle);
+	friend void draw(cCircle& _cCircle);
 };
 
 
@@ -55,7 +58,7 @@ public:
 void draw(cCircle& _cCircle)
 {
 	setcolor(COLOR(_cCircle.r,_cCircle.g,_cCircle.b));
-	circle(X(_cCircle.x),Y(_cCircle.y),_cCircle.radius)
+	circle(X(_cCircle.x), Y(_cCircle.y), _cCircle.radius);
 }
 
 void cCircle::setRadius(int _radius)
@@ -66,7 +69,7 @@ void cCircle::setRadius(int _radius)
 int main()
 {
 	int i;
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 第 5 題");
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2");
 	registermousehandler(WM_MOUSEMOVE, move_handler);		// 註冊滑鼠移動的處理函式
 	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // 註冊滑鼠左鍵按下的處理函式
 	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// 註冊滑鼠左鍵釋放的處理函式
@@ -76,6 +79,7 @@ int main()
 	// c1 呼叫 init, 然後呼叫 draw 畫出 c1
 	c1.init();
 	draw(c1);
+	printf("%d",c1.b);
 	// c2 呼叫 init, 然後呼叫 setRadius 設定半徑為 150, 呼叫 setColor 設定顏色為 255, 0, 0, 呼叫 draw 畫出 c2
 	c2.init();
 	c2.setRadius(150);
@@ -89,7 +93,7 @@ int main()
 	// c4 呼叫 init, 然後呼叫 setRadius 設定半徑為 50, 呼叫 setColor 設定顏色為 0, 0, 255,  呼叫 draw 畫出 c4
 	c4.init();
 	c4.setRadius(50);
-	c4.setColor(0,0,50);
+	c4.setColor(0,0,255);
 	draw(c4);
 	
 	while (!kbhit())
