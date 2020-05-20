@@ -73,6 +73,7 @@
     <ClCompile Include="BGIKernel\text.cxx" />
     <ClCompile Include="BGIKernel\winbgi.cxx" />
     <ClCompile Include="BGIKernel\winthread.cxx" />
+    <ClCompile Include="CMouse.cpp" />
     <ClCompile Include="Ex2-1.cpp" />
     <ClCompile Include="Ex2-2.cpp" />
     <ClCompile Include="Ex2-3.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="BGIKernel\winbgi.h" />
     <ClInclude Include="BGIKernel\winbgim.h" />
     <ClInclude Include="BGIKernel\winbgitypes.h" />
+    <ClInclude Include="CMouse.h" />
     <ClInclude Include="functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

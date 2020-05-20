@@ -31,7 +31,7 @@
 //  
 //
 
-#define EX7
+//#define EX7
 #ifdef EX7
 
 #define _CRT_SECURE_NO_WARNINGS 1
@@ -83,24 +83,24 @@ int main()
 {
 	char cIn;
 	int status;
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2 第7題");
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2-7");
 	CMouse mx;						// 宣告 mx 建立時就會自動呼叫 CMouse 建構
 	mx.setPos(-120, 120);						// 呼叫 setPos 位置設定在 (-120, 120)
 	mx.setColor(COLOR_WHITE, COLOR_BLACK);						// 呼叫 setColor，顏色設定成 COLOR_WHITE, COLOR_BLACK
 	do {
 		cleardevice();
 		drawFence();	// 畫出範圍
-		mx.draw()				// 畫出老鼠
+		mx.draw();				// 畫出老鼠
 		swapbuffers();
-		getch();		// 輸入
-		mx.update()				// 讓老鼠自己更新狀態
+		cIn = getch();		// 輸入
+		status = mx.update(cIn);				// 讓老鼠自己更新狀態
 		rewind(stdin);
-	} while ();
+	} while (status != 0);
 
 	cleardevice();
 	drawFence();
 	setcolor(COLOR_WHITE);
-	outtextxy(X(-100), Y(0), "!! 老鼠死了 GG 按任意鍵結束!! ");
+	outtextxy(X(-100), Y(0), "!! mouse is die !! ");
 	swapbuffers();
 	while (!kbhit()) { delay(200); } return 0;
 }

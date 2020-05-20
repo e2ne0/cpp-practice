@@ -66,7 +66,7 @@ void cCircle::setRadius(int _radius)
 int main()
 {
 	int i;
-	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2");
+	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2-5");
 	registermousehandler(WM_MOUSEMOVE, move_handler);		// 註冊滑鼠移動的處理函式
 	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // 註冊滑鼠左鍵按下的處理函式
 	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// 註冊滑鼠左鍵釋放的處理函式
