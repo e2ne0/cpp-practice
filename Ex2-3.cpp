@@ -7,13 +7,13 @@
 //
 //     draw()函式，沒有回傳值沒有引數，負責將圓畫在螢幕上
 //
-// 提示:顏色用 rand() % 155 + 100 
+// 提示:顏色用 rand() % 155 + 100
 //
 // 在主程式以 sCircle 結構包含10個元素的一維結構陣列根據以下的註解完成所需要的程式碼，
 // 要求：主程以迴圈透過結構陣列中的每一個元素呼叫 gen() 函式 與 draw()函式 來畫出這10個圓
 //    完成 ex2-3.jpg
-// 
-//  draw 會用到的函式 
+//
+//  draw 會用到的函式
 // 	setcolor(COLOR( , ,));  // 設定顏色
 //  circle(X(), Y(), );
 
@@ -28,20 +28,20 @@
 #include <ctime>
 #include "functions.h"
 
-
-
 // 宣告 sCircle 結構
 struct sCircle
 {
 	int x, y, radius, r, g, b;
 
-	void gen(int ix, int iy,int ir){
+	void gen(int ix, int iy, int ir)
+	{
 		x = ix;
 		y = iy;
 		radius = ir;
 	}
 
-	void draw() {
+	void draw()
+	{
 		r = rand() % 155 + 100;
 		g = rand() % 155 + 100;
 		b = rand() % 155 + 100;
@@ -50,22 +50,21 @@ struct sCircle
 	}
 };
 
-
 int main()
 {
 	int i;
 	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2-3");
-	registermousehandler(WM_MOUSEMOVE, move_handler);		// 註冊滑鼠移動的處理函式
-	registermousehandler(WM_LBUTTONDOWN, lbDown_handler);   // 註冊滑鼠左鍵按下的處理函式
-	registermousehandler(WM_LBUTTONUP, lbUp_handler);		// 註冊滑鼠左鍵釋放的處理函式
+	registermousehandler(WM_MOUSEMOVE, move_handler);	  // 註冊滑鼠移動的處理函式
+	registermousehandler(WM_LBUTTONDOWN, lbDown_handler); // 註冊滑鼠左鍵按下的處理函式
+	registermousehandler(WM_LBUTTONUP, lbUp_handler);	  // 註冊滑鼠左鍵釋放的處理函式
 	srand(time(NULL));
 
-	struct sCircle cx[10];				// 宣告 sCircle 結構陣列 包含 10 個元素
+	struct sCircle cx[10]; // 宣告 sCircle 結構陣列 包含 10 個元素
 
 	for (i = 0; i < 10; i++) //用迴圈
 	{
-		cx[i].gen(-300 + i * 60, -300 + i * 60, i * 6 + 10);		// 呼叫 gen 時，傳入  -300+i*60, i*6+10
-		cx[i].draw() ;		// 呼叫 draw 畫出自己
+		cx[i].gen(-300 + i * 60, -300 + i * 60, i * 6 + 10); // 呼叫 gen 時，傳入  -300+i*60, i*6+10
+		cx[i].draw();										 // 呼叫 draw 畫出自己
 	}
 	while (!kbhit())
 	{

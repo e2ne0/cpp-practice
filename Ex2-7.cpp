@@ -18,7 +18,7 @@
 //      setPos 函式，兩個引數，傳入老鼠的 x/y 座標，型別都是 int
 //			功能是設定老鼠的座標
 //		draw 函式，畫出老鼠
-//      update() 函式，回傳值為整數，傳回老鼠的狀態，引數為輸入的字元 
+//      update() 函式，回傳值為整數，傳回老鼠的狀態，引數為輸入的字元
 //               功能是依照輸入的 wasd 四個按鍵，讓老鼠上下左右個移動 20 個單位
 //               同時判斷 老鼠是否在 X/Y 正負 200 的範圍內(不含)
 //					狀態設定成 正常狀態 顏色為  mcolor[0]
@@ -28,7 +28,7 @@
 //
 // 根據主程式的需求，完成可利用鍵盤 w s a d 四個按鍵，控制老鼠的移動，走到邊界改變顏色，移除並顯示死亡
 // 善意提醒 : 不要將傳入的引數變數名稱宣告成跟成員變數一樣
-//  
+//
 //
 
 //#define EX7
@@ -46,8 +46,8 @@
 #define NORMAL_COLOR COLOR_YELLOW
 #define DANGER_COLOR COLOR_RED
 
-#define X_MAX 200	// 定義可活動的範圍
-#define Y_MAX 200	// 定義可活動的範圍
+#define X_MAX 200 // 定義可活動的範圍
+#define Y_MAX 200 // 定義可活動的範圍
 using namespace std;
 void drawFence();
 
@@ -56,44 +56,42 @@ void drawFence();
 
 // update() 函式會用到
 
-	//switch () {
-	//case 'w': // 往上. 更改老鼠位置,並根據新的位置,更新老鼠的狀態
-	//	break;
-	//case 's': // 往下
-	//	break;
-	//case 'a': // 往左
-	//	break;
-	//case 'd': // 往右
-	//	 break;
-	//}
+//switch () {
+//case 'w': // 往上. 更改老鼠位置,並根據新的位置,更新老鼠的狀態
+//	break;
+//case 's': // 往下
+//	break;
+//case 'a': // 往左
+//	break;
+//case 'd': // 往右
+//	 break;
+//}
 
-	//if ( ) { // 安全區域內
-	//	
-	//}
-	//else if () {// 移除邊界 老鼠死亡 遊戲結束
+//if ( ) { // 安全區域內
+//
+//}
+//else if () {// 移除邊界 老鼠死亡 遊戲結束
 
-	//}
-	//else {	// 在邊界上
+//}
+//else {	// 在邊界上
 
-	//}
-
-	
-
+//}
 int main()
 {
 	char cIn;
 	int status;
 	initwindow(SCREENWIDTH, SCREENWIDTH, "EX2-7");
-	CMouse mx;						// 宣告 mx 建立時就會自動呼叫 CMouse 建構
-	mx.setPos(-120, 120);						// 呼叫 setPos 位置設定在 (-120, 120)
-	mx.setColor(COLOR_WHITE, COLOR_BLACK);						// 呼叫 setColor，顏色設定成 COLOR_WHITE, COLOR_BLACK
-	do {
+	CMouse mx;							   // 宣告 mx 建立時就會自動呼叫 CMouse 建構
+	mx.setPos(-120, 120);				   // 呼叫 setPos 位置設定在 (-120, 120)
+	mx.setColor(COLOR_WHITE, COLOR_BLACK); // 呼叫 setColor，顏色設定成 COLOR_WHITE, COLOR_BLACK
+	do
+	{
 		cleardevice();
-		drawFence();	// 畫出範圍
-		mx.draw();				// 畫出老鼠
+		drawFence(); // 畫出範圍
+		mx.draw();	 // 畫出老鼠
 		swapbuffers();
-		cIn = getch();		// 輸入
-		status = mx.update(cIn);				// 讓老鼠自己更新狀態
+		cIn = getch();			 // 輸入
+		status = mx.update(cIn); // 讓老鼠自己更新狀態
 		rewind(stdin);
 	} while (status != 0);
 
@@ -102,16 +100,22 @@ int main()
 	setcolor(COLOR_WHITE);
 	outtextxy(X(-100), Y(0), "!! mouse is die !! ");
 	swapbuffers();
-	while (!kbhit()) { delay(200); } return 0;
+	while (!kbhit())
+	{
+		delay(200);
+	}
+	return 0;
 }
 
 void drawFence()
 {
-	for (int i = -200; i <= 200; i += 20) {
+	for (int i = -200; i <= 200; i += 20)
+	{
 		drawColorBox(i, 200, COLOR_LIGHTGREEN);
 		drawColorBox(i, -200, COLOR_LIGHTGREEN);
 	}
-	for (int i = -180; i <= 180; i += 20) {
+	for (int i = -180; i <= 180; i += 20)
+	{
 		drawColorBox(-200, i, COLOR_LIGHTGREEN);
 		drawColorBox(200, i, COLOR_LIGHTGREEN);
 	}

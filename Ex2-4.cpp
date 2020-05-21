@@ -4,7 +4,7 @@
 //
 // 以函示多載的方式宣告三個 pchar 函式
 // 第一個函式有一個引數 ch (char 型別)，沒有預設值，印出 5 個 ch 字元
-// 第二個函式有一個引數 b (bool 型別)，預設值為 true 
+// 第二個函式有一個引數 b (bool 型別)，預設值為 true
 //        當 b 為 true 時，印出 5 個 #。 當 b 為 false 時，印出 5 個 * 字元。
 // 第三個函式有兩個引數，第一個為 n (int 型別) 第二個為 ch (char 型別)
 //     只有第二個引數 ch 有預設值為  *  字元
@@ -17,7 +17,6 @@
 // 呼叫 pchar(5, '+')  +++++
 // 呼叫 pchar('@')     @@@@@
 // 呼叫 pchar(7)       *******
-
 
 //#define EX4
 #ifdef EX4
@@ -35,13 +34,19 @@ int pchar(bool b = true);
 int pchar(int n, char ch = '*');
 int main(void)
 {
-	cout << "呼叫 pchar(),      "; pchar();
-	cout << "呼叫 pchar(false)  "; pchar(false);
-	cout << "呼叫 pchar(5,'+')  "; pchar(5, '+');
-	cout << "呼叫 pchar('@')    "; pchar('@');
-	cout << "呼叫 pchar(7)      "; pchar(7);
-	
-	system("pause"); return(0);
+	cout << "呼叫 pchar(),      ";
+	pchar();
+	cout << "呼叫 pchar(false)  ";
+	pchar(false);
+	cout << "呼叫 pchar(5,'+')  ";
+	pchar(5, '+');
+	cout << "呼叫 pchar('@')    ";
+	pchar('@');
+	cout << "呼叫 pchar(7)      ";
+	pchar(7);
+
+	system("pause");
+	return (0);
 }
 
 // pchar 主體寫在這裡
@@ -59,7 +64,7 @@ int pchar(bool b = true)
 	}
 	else
 	{
-		
+
 		cout << "*****" << endl;
 	}
 	return cout.good();
