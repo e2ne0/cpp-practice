@@ -56,7 +56,7 @@ int pchar(char ch)
 	cout << setw(5) << ch << endl;
 	return cout.good();
 }
-int pchar(bool b = true)
+int pchar(bool b)
 {
 	if (b)
 	{
@@ -69,7 +69,7 @@ int pchar(bool b = true)
 	}
 	return cout.good();
 }
-int pchar(int n, char ch = '*')
+int pchar(int n, char ch)
 {
 	cout.fill(ch);
 	cout << setw(n) << ch << endl;
